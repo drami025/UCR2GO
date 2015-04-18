@@ -3,4 +3,14 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="restaurants">
+        <item>Coffee Bean</item>
+        <item>Habanero\'s</item>
+        <item>La Fiamma</item>
+        <item>Latitude 55</item>
+        <item>Panda Express</item>
+        <item>Subway</item>
+    </string-array>
+    <string name="title_activity_results">ResultsActivity</string>
 </resources>
