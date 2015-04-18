@@ -24,6 +24,30 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ucr2go.return0.ucr2go.TitleActivity" />
         </activity>
+        <activity
+            android:name=".CoffeeBeanActivity"
+            android:label="@string/title_activity_coffee_bean"
+            android:parentActivityName=".TitleActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ucr2go.return0.ucr2go.TitleActivity" />
+        </activity>
+        <activity
+            android:name=".HabaneroActivity"
+            android:label="@string/title_activity_habanero"
+            android:parentActivityName=".TitleActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ucr2go.return0.ucr2go.TitleActivity" />
+        </activity>
+        <activity
+            android:name=".LaFiammaActivity"
+            android:label="@string/title_activity_la_fiamma"
+            android:parentActivityName=".TitleActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ucr2go.return0.ucr2go.TitleActivity" />
+        </activity>
     </application>
 
 </manifest>

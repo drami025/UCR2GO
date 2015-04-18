@@ -13,4 +13,7 @@
         <item>Subway</item>
     </string-array>
     <string name="title_activity_results">ResultsActivity</string>
+    <string name="title_activity_coffee_bean">CoffeeBeanActivity</string>
+    <string name="title_activity_habanero">HabaneroActivity</string>
+    <string name="title_activity_la_fiamma">LaFiammaActivity</string>
 </resources>
