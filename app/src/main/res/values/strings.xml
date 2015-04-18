@@ -13,4 +13,7 @@
         <item>Subway</item>
     </string-array>
     <string name="title_activity_results">ResultsActivity</string>
+    <string name="title_activity_latitude">LatitudeActivity</string>
+    <string name="title_activity_panda">PandaActivity</string>
+    <string name="title_activity_subway">SubwayActivity</string>
 </resources>
