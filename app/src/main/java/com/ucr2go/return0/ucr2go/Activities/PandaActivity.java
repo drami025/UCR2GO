@@ -13,6 +13,8 @@ import android.widget.Toast;
 import com.ucr2go.return0.ucr2go.Model.CustomGridAdapter;
 import com.ucr2go.return0.ucr2go.R;
 
+import java.text.DecimalFormat;
+
 
 public class PandaActivity extends ActionBarActivity {
 
@@ -117,15 +119,16 @@ public class PandaActivity extends ActionBarActivity {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Double total_price = Double.valueOf(mTotalPrice.getText().toString());
+                Double total_price = Double.valueOf(mTotalPrice.getText().toString().substring(1));
                 Double price = (Double) mAdapter.getItem(position);
+
                 if(panda_presses[position])
                     total_price += price;
                 else
                     total_price -= price;
-                mTotalPrice.setText(total_price + "");
-               // Toast.makeText(PandaActivity.this, "" + price,
-                 //       Toast.LENGTH_SHORT).show();
+
+                DecimalFormat formatter = new DecimalFormat("#0.00");
+                mTotalPrice.setText("$" + formatter.format(total_price));
             }
         });
     }
