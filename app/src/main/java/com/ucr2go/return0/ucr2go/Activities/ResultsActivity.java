@@ -7,10 +7,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.ucr2go.return0.ucr2go.Model.HashMapStringConverter;
+import com.ucr2go.return0.ucr2go.Model.Node;
 import com.ucr2go.return0.ucr2go.R;
+
+import java.util.HashMap;
 
 
 public class ResultsActivity extends ActionBarActivity {
+
+    private HashMap<Integer, Node> mSelections;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +24,8 @@ public class ResultsActivity extends ActionBarActivity {
         setContentView(R.layout.activity_results);
         TextView resultText = (TextView) findViewById(R.id.result_text);
         Intent intent = getIntent();
-        String result_message = intent.getStringExtra("message");
-        resultText.setText(result_message);
+        String result_message = intent.getStringExtra("hashmap");
+        mSelections = HashMapStringConverter.stringToHashMap(result_message);
     }
 
     @Override

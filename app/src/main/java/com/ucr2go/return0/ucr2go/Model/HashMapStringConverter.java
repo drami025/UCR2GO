@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class HashMapStringConverter {
 
-    public static String hashMapToString(List<Node> list){
+    public static String hashMapToString(HashMap<Integer, Node> list){
         Gson gson = new Gson();
         return gson.toJson(list);
     }
