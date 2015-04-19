@@ -15,18 +15,79 @@ import com.ucr2go.return0.ucr2go.R;
 
 public class PandaActivity extends ActionBarActivity {
 
+    private int[] panda_food = {
+            R.drawable.panda_express_orangechicken,
+            R.drawable.panda_express_sweetfirechickenbreast,
+            R.drawable.panda_express_stringbeanchickenbreast,
+            R.drawable.panda_express_kungpaochicken,
+            R.drawable.panda_express_blackpepperchicken,
+            R.drawable.panda_express_teriyakichicken,
+            R.drawable.panda_expressribs,
+            R.drawable.panda_express_broccolibeef,
+            R.drawable.panda_express_shainghaiangussteak,
+            R.drawable.panda_express_beijingbeef,
+            R.drawable.panda_express_orangechikenshrimp,
+            R.drawable.panda_express_tofu,
+            R.drawable.panda_express_chowmein,
+            R.drawable.panda_express_friedrice,
+            R.drawable.panda_express_vegetables,
+            R.drawable.panda_express_whiterice,
+            R.drawable.panda_express_brownrice,
+            R.drawable.panda_express_dumplings,
+            R.drawable.panda_express_potstickers,
+            R.drawable.panda_express_springroll,
+            R.drawable.panda_express_eggroll,
+            R.drawable.panda_express_mushroomsoup,
+            R.drawable.panda_express_friedshrimp,
+            R.drawable.panda_express_fortunecookie,
+            R.drawable.panda_express_cookie
+    };
+
+    private double[] panda_food_prices = {
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            0.99,
+            0.99
+    };
+
+    CustomGridAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panda);
 
-        GridView gridview = (GridView) findViewById(R.id.gridview);
-        gridview.setAdapter(new CustomGridAdapter(this, R.array.panda_food_items));
+        mAdapter = new CustomGridAdapter(this, R.array.panda_food_items, panda_food, panda_food_prices);
+
+        GridView gridview = (GridView) findViewById(R.id.panda_gridview);
+        gridview.setAdapter(mAdapter);
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Toast.makeText(PandaActivity.this, "" + position,
+                Double price = (Double) mAdapter.getItem(position);
+                Toast.makeText(PandaActivity.this, "" + price,
                         Toast.LENGTH_SHORT).show();
             }
         });

@@ -49,6 +49,7 @@ public class TitleActivity extends ActionBarActivity {
                         break;
                     case 4:
                         message = "FORTUNE COOKIE ALWAYS WRONG";
+                        intent = new Intent(TitleActivity.this, PandaActivity.class);
                         break;
                     case 5:
                         message = "EAT FRESH";
