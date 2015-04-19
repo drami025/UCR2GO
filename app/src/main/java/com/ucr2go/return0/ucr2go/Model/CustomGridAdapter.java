@@ -88,4 +88,8 @@ public class CustomGridAdapter extends BaseAdapter{
         return grid;
 
     }
+
+    public String getStringItem(int position) {
+        return mfood_items[position];
+    }
 }
