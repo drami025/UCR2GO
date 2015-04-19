@@ -43,13 +43,41 @@ public class PandaActivity extends ActionBarActivity {
             R.drawable.panda_express_cookie
     };
 
+    private double[] panda_food_prices = {
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            3.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            1.99,
+            0.99,
+            0.99
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panda);
 
         GridView gridview = (GridView) findViewById(R.id.panda_gridview);
-        gridview.setAdapter(new CustomGridAdapter(this, R.array.panda_food_items, panda_food));
+        gridview.setAdapter(new CustomGridAdapter(this, R.array.panda_food_items, panda_food, panda_food_prices));
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
