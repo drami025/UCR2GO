@@ -5,7 +5,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -20,24 +19,8 @@ public class InformationActivity extends ActionBarActivity {
     private EditText mCredit;
     private EditText mLocation;
 
-    private Button mButton;
-
-    public class MyActivity extends ActionBarActivity {
-        public final static String EXTRA_MESSAGE = "com.ucr2g0.return0.ucr2g0.MESSAGE";
-
-    }
-
-    private void sendMessage(View view) {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.credit);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-    }
 
 
-
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,11 +28,9 @@ public class InformationActivity extends ActionBarActivity {
 
         //Intent intent = getIntent();
         //String message = intent.getStringExtra(InformationActivity.EXTRA_MESSAGE);
-        mName = (EditText) findViewById(R.id.info);
-        mCredit = (EditText) findViewById(R.id.credit);
-        mLocation = (EditText) findViewById(R.id.location);
-
-        mButton = (Button) findViewById(R.id.buttoninfo);
+//        mName = (EditText) findViewById(R.id.info);
+//        mCredit = (EditText) findViewById(R.id.editText2);
+//        mLocation = (EditText) findViewById(R.id.editText3);
 
 
     }
