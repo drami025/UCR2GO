@@ -21,11 +21,11 @@ public class LatitudeActivity extends ActionBarActivity {
 
 
     private int[] latitude_food = {
-/*            R.drawable.latitude_Chickenstrips,
+            R.drawable.latitude_Chickenstrips,
             R.drawable.latitude_Hamburger,
             R.drawable.latitude_DoubleCheeseBurger,
             R.drawable.latitude_GrilledCheese,
-            R.drawable.latitude_Fries*/
+            R.drawable.latitude_Fries
     };
 
     private double[] latitude_food_prices = {
@@ -70,7 +70,7 @@ public class LatitudeActivity extends ActionBarActivity {
                 Double price = (Double) mAdapter.getItem(position);
 
                 // Create Node to put onto checkout list
-                Node node(mAdapter.getStringItem(position),latitude_food_prices[position],latitude_food[position]);
+                Node node = new Node(mAdapter.getStringItem(position),latitude_food_prices[position],latitude_food[position]);
 
                 if (latitude_presses[position]) {
                     total_price -= price;
