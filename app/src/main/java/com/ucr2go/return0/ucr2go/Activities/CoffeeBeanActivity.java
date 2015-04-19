@@ -113,6 +113,13 @@ public class CoffeeBeanActivity extends ActionBarActivity {
             false,
             false,
             false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
             false
     };
 
