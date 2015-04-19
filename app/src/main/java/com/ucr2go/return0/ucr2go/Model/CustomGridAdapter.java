@@ -19,11 +19,19 @@ public class CustomGridAdapter extends BaseAdapter{
     private Context mContext;
     private String[] mfood_items;
     private int[] mfood_pics;
+    private double[] mfood_prices;
 
     public CustomGridAdapter(Context c, int string_array_id, int[] drawable_id_array) {
         mfood_items = c.getResources().getStringArray(string_array_id);
         mfood_pics = drawable_id_array;
         mContext = c;
+    }
+
+    public CustomGridAdapter(Context c, int string_array_id, int[] drawable_id_array, double[] prices){
+        mfood_items = c.getResources().getStringArray(string_array_id);
+        mfood_pics = drawable_id_array;
+        mContext = c;
+        mfood_prices = prices;
     }
 
     @Override
@@ -53,10 +61,15 @@ public class CustomGridAdapter extends BaseAdapter{
 
         }
 
-        TextView textView = (TextView) grid.findViewById(R.id.food_item);
+        TextView foodNameTextView = (TextView) grid.findViewById(R.id.food_item);
         ImageView imageView = (ImageView)grid.findViewById(R.id.food_item_image);
-        textView.setText(mfood_items[position]);
+        foodNameTextView.setText(mfood_items[position]);
         imageView.setImageResource(mfood_pics[position]);
+
+        if(mfood_prices != null){
+            TextView foodPriceTextView = (TextView) grid.findViewById(R.id.item_price);
+            foodPriceTextView.setText(mfood_prices[position] + "");
+        }
 
         return grid;
 
