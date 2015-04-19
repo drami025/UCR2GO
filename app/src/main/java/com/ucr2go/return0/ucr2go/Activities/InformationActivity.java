@@ -28,9 +28,9 @@ public class InformationActivity extends ActionBarActivity {
 
         //Intent intent = getIntent();
         //String message = intent.getStringExtra(InformationActivity.EXTRA_MESSAGE);
-        mName = (EditText) findViewById(R.id.info);
-        mCredit = (EditText) findViewById(R.id.editText2);
-        mLocation = (EditText) findViewById(R.id.editText3);
+//        mName = (EditText) findViewById(R.id.info);
+//        mCredit = (EditText) findViewById(R.id.editText2);
+//        mLocation = (EditText) findViewById(R.id.editText3);
 
 
     }
