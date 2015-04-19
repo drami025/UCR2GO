@@ -38,16 +38,16 @@ public class SubwayActivity extends ActionBarActivity {
     private double [] m_Prices = {
             5.99,
             6.99,
-            5.00,
-            5.00,
-            6.99,
-            7.00,
-            7.00,
-            6.00,
             5.99,
-            5.00,
-            5.00,
-            6.00
+            5.99,
+            6.99,
+            7.99,
+            7.99,
+            6.99,
+            5.99,
+            5.99,
+            5.99,
+            6.99
 
     };
 
