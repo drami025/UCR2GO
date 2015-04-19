@@ -45,6 +45,52 @@
         <item>Chocolate Chunk Cookie</item>
     </string-array>
 
+    <string-array name="coffee_bean_items">
+        <item>the original mocha ice blended drink</item>
+        <item>the original vanilla ice blended drink</item>
+        <item>caramel ice blended drink</item>
+        <item>white chocolate ice blended drink</item>
+        <item>dark chocolate ice blended drink</item>
+        <item>black forest ice blended drink</item>
+        <item>pure chocolate ice blended drink</item>
+        <item>pure vanilla ice blended drink</item>
+        <item>malibu dream ice blended drink</item>
+        <item>pomegranate blueberry ice blended drink</item>
+        <item>matcha Ice blended drink</item>
+        <item>chai ice blended drink</item>
+        <item>frozen lemonade fru-tea</item>
+        <item>mucho mango fru-tea</item>
+        <item>iced tea</item>
+        <item>iced tea lemonade</item>
+        <item>iced tea latte with vanilla powder</item>
+        <item>iced tea latte with chocolate powder</item>
+        <item>iced coffee</item>
+        <item>iced americano</item>
+        <item>iced cappuccino</item>
+        <item>iced latte</item>
+        <item>iced mocha latte</item>
+        <item>iced vanilla latte</item>
+        <item>iced caramel hazelnut latte</item>
+        <item>iced dark chocolate latte</item>
+        <item>espresso</item>
+        <item>macchiato</item>
+        <item>cappuccino</item>
+        <item>caramel cappuccino</item>
+        <item>americano</item>
+        <item>caffe latte</item>
+        <item>mocha latte</item>
+        <item>vanilla latte</item>
+        <item>caramel latte</item>
+        <item>white chocolate dream latte</item>
+        <item>dark chocolate latte</item>
+        <item>hazelnut latte</item>
+        <item>today’s brew coffee</item>
+        <item>red eye</item>
+        <item>cafe au lait</item>
+        <item>cafe mocha</item>
+        <item>cafe vanilla</item>
+    </string-array>
+
     <string name="title_activity_results">ResultsActivity</string>
     <string name="filler">filler</string>
 </resources>
