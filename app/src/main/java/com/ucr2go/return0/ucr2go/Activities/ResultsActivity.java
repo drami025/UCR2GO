@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -27,6 +29,8 @@ import java.util.List;
 public class ResultsActivity extends ActionBarActivity {
 
     private HashMap<Integer, Node> mSelections;
+    private ResultsAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,9 +56,22 @@ public class ResultsActivity extends ActionBarActivity {
             }
         }
 
+        mAdapter = new ResultsAdapter(this, mSelections, names, i);
+
         ListView resultList = (ListView) findViewById(R.id.selection_list);
         resultList.setItemsCanFocus(true);
-        resultList.setAdapter(new ResultsAdapter(this, mSelections, names, i));
+        resultList.setAdapter(mAdapter);
+
+        Button submit = (Button) findViewById(R.id.submit_results_button);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ResultsActivity.this, InformationActivity.class);
+                intent.putExtra("total", mAdapter.getTotal());
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override

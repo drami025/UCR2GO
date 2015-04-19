@@ -1,5 +1,6 @@
 package com.ucr2go.return0.ucr2go.Activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -8,33 +9,40 @@ import android.view.MenuItem;
 
 import com.ucr2go.return0.ucr2go.R;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 
 
-public class SplashScreenActivity extends ActionBarActivity {
+public class SplashScreenActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-
-        Thread splash_screen = new Thread(){
-            public void run (){
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
                 try{
-                    sleep(200);
+                    Thread.sleep(800);
                 }catch(Exception e){
                     e.printStackTrace();
                 }finally{
-                    Intent intent = new Intent(SplashScreenActivity.this, TitleActivity.class);
-                    startActivity(intent);
 
+                    SplashScreenActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent(SplashScreenActivity.this, TitleActivity.class);
+                            startActivity(intent);
+                        }
+                    });
                 }
             }
-
-        };
-
+        });
     }
+
 
 
     @Override

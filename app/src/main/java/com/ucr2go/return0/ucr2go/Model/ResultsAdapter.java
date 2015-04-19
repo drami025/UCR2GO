@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.ucr2go.return0.ucr2go.R;
 
+import java.text.DecimalFormat;
 import java.util.Collection;
 import java.util.HashMap;
 
@@ -26,6 +27,7 @@ public class ResultsAdapter extends ArrayAdapter {
     private Double[] mPrices;
     private String[] mNames;
     private Context mContext;
+    private Double mTotal = 0.00;
 
     public ResultsAdapter(Context context, HashMap<Integer, Node> hashMap, String[] names, int size) {
         super(context, R.layout.selection_list_item, names);
@@ -43,7 +45,6 @@ public class ResultsAdapter extends ArrayAdapter {
                 mDrawableIds[i] = n.getDrawableId();
                 mPrices[i] = n.getPrice();
                 i++;
-                Log.e("CHECK NAME", n.getName());
             }
         }
     }
@@ -58,6 +59,7 @@ public class ResultsAdapter extends ArrayAdapter {
             rowView = inflater.inflate(R.layout.selection_list_item, parent, false);
         }
 
+
         TextView nameText = (TextView) rowView.findViewById(R.id.result_name);
         final TextView priceText = (TextView) rowView.findViewById(R.id.result_price);
         ImageView image = (ImageView) rowView.findViewById(R.id.result_image);
@@ -69,19 +71,19 @@ public class ResultsAdapter extends ArrayAdapter {
         }
         else{
             priceText.setText(mPrices[position] + "");
+            final int amountMore = Integer.valueOf(addMoreText.getText().toString());
+            mTotal += Double.valueOf(priceText.getText().toString()) * amountMore;
+            TextView totalText = (TextView) ((Activity) mContext).findViewById(R.id.total_results_price);
+            totalText.setText(mTotal + "");
 
             addMoreText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                 @Override
                 public void onFocusChange(View v, boolean hasFocus) {
-                    int amountMore = 1;
-                    if (addMoreText != null) {
-                        Log.e("HERE", "COOL " + addMoreText.getText());
-                        amountMore = Integer.valueOf(addMoreText.getText().toString());
-                    }
-
                     if (!hasFocus) {
+                        DecimalFormat formatter = new DecimalFormat("#0.00");
                         double item_price = Double.valueOf(priceText.getText().toString());
-                        priceText.setText(item_price * amountMore + "");
+                        priceText.setText("$" + formatter.format(item_price * amountMore) + "");
+                        ResultsAdapter.this.notifyDataSetChanged();
                     }
                 }
             });
@@ -98,4 +100,9 @@ public class ResultsAdapter extends ArrayAdapter {
 
         return rowView;
     }
+
+    public Double getTotal(){
+        return mTotal;
+    }
+
 }

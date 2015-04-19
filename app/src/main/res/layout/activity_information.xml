@@ -4,15 +4,17 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.ucr2go.return0.ucr2go.Activities.InformationActivity">
+    tools:context="com.ucr2go.return0.ucr2go.Activities.InformationActivity"
+    >
 
     <EditText
+        android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="@string/name_info"
         android:ems="10"
-        android:id="@+id/editText"
+
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="46dp" />
@@ -21,10 +23,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:text="Credit Info"
+        android:hint="@string/credit_info"
         android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/editText"
+        android:id="@+id/credit_info"
+        android:layout_below="@+id/info"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp" />
 
@@ -32,10 +34,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPostalAddress"
-        android:text="Location"
+        android:hint="@string/location_info"
         android:ems="10"
-        android:id="@+id/editText3"
-        android:layout_below="@+id/editText2"
+        android:id="@+id/id_info"
+        android:layout_below="@+id/credit_info"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="41dp" />
 
