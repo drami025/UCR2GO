@@ -28,12 +28,19 @@ public class LaFiammaActivity extends ActionBarActivity {
             false,
             false,
             false,
+            false,
+            false,
+            false,
             false
     };
 
     private CustomGridAdapter mAdapter;
     private TextView mTotalPrice;
     private GridView mGridView;
+    private boolean meat = false;
+    private boolean veggie[] = {false, false};
+    private boolean sauce = false;
+    private boolean oil = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +69,6 @@ public class LaFiammaActivity extends ActionBarActivity {
                 mGridView.invalidateViews();
             }
         });
-
     }
 
 

@@ -66,17 +66,17 @@ public class CustomGridAdapter extends BaseAdapter{
 
         if (convertView == null) {
             grid = inflater.inflate(R.layout.grid_item, parent, false);
-
         }
+
         LinearLayout layout = (LinearLayout) grid.findViewById(R.id.grid_item_layout);
         TextView foodNameTextView = (TextView) grid.findViewById(R.id.food_item);
+
         if(mfood_pics != null) {
             ImageView imageView = (ImageView) grid.findViewById(R.id.food_item_image);
             imageView.setImageResource(mfood_pics[position]);
         }
+
         foodNameTextView.setText(mfood_items[position]);
-
-
 
         if(mPressed[position]){
             layout.setBackgroundColor(Color.parseColor("#FFFFFFFF"));
