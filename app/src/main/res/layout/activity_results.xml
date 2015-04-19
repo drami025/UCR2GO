@@ -13,12 +13,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/selection_list"
-        android:layout_alignParentTop="true"
         android:layout_below="@+id/total_results_price"
         android:layout_above="@+id/submit_results_button"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:id="@+id/total_results_price"
