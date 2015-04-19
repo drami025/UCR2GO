@@ -1,5 +1,6 @@
 package com.ucr2go.return0.ucr2go.Activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -8,12 +9,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ucr2go.return0.ucr2go.Model.CustomGridAdapter;
+import com.ucr2go.return0.ucr2go.Model.HashMapStringConverter;
 import com.ucr2go.return0.ucr2go.Model.Node;
 import com.ucr2go.return0.ucr2go.R;
 
@@ -117,7 +120,18 @@ public class PandaActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panda);
 
-        mPandaOrder = new HashMap<>();
+        mPandaOrder = new HashMap<Integer, Node>();
+        Button button = (Button) findViewById(R.id.panda_buttoncontinue_);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String json = HashMapStringConverter.hashMapToString(mPandaOrder);
+                Intent intent = new Intent(PandaActivity.this, ResultsActivity.class);
+                intent.putExtra("hashmap", json);
+                startActivity(intent);
+            }
+        });
         mTotalPrice = (TextView) findViewById(R.id.total_price_panda);
         mAdapter = new CustomGridAdapter(this, R.array.panda_food_items, panda_food,
                 panda_food_prices, panda_presses);
@@ -131,11 +145,12 @@ public class PandaActivity extends ActionBarActivity {
                 Double total_price = Double.valueOf(mTotalPrice.getText().toString().substring(1));
                 Double price = (Double) mAdapter.getItem(position);
                 if (panda_presses[position]) {
-                    mPandaOrder.put(position, new Node(mAdapter.getStringItem(position), price, panda_food[position]) );
+                    mPandaOrder.remove(position);
                     total_price -= price;
                     panda_presses[position] = false;
                 } else {
-                    mPandaOrder.remove(position);
+                    mPandaOrder.put(position, new Node(mAdapter.getStringItem(position), price, panda_food[position]) );
+
                     total_price += price;
                     panda_presses[position] = true;
                 }
