@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.GridView;
 
 import com.ucr2go.return0.ucr2go.R;
 
@@ -14,6 +15,9 @@ public class CoffeeBeanActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coffee_bean);
+
+        GridView coffee_grid = (GridView) findViewById(R.id.coffee_bean_grid_view);
+
     }
 
 
