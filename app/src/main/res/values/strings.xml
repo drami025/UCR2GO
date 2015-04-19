@@ -51,15 +51,12 @@
     <string-array name="fiamma_food_items" >
         <item>Chicken</item>
         <item>Sausage</item>
-        <item>Beef</item>
         <item>Mushroom</item>
         <item>Spinach</item>
         <item>Tomato</item>
-        <item>Cucumber</item>
-        <item>Tomato Sauce</item>
-        <item>Alfredo Sauce</item>
-        <item>Pesto Sauce</item>
-        <item>Sundried Tomato Sauce</item>
+        <item>Alfredo</item>
+        <item>Pesto</item>
+        <item>Sundried Tomato</item>
         <item>Garlic Oil</item>
         <item>Spicy Oil</item>
         <item>Regular Oil</item>
