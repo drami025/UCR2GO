@@ -98,7 +98,7 @@
         <item>caramel cappuccino</item>
         <item>americano</item>
         <item>caffe latte</item>
-        <item>mocha latte</item>
+      <!--  <item>mocha latte</item>
         <item>vanilla latte</item>
         <item>caramel latte</item>
         <item>white chocolate dream latte</item>
@@ -107,7 +107,7 @@
         <item>today’s brew coffee</item>
         <item>red eye</item>
         <item>cafe au lait</item>
-        <item>cafe mocha</item>
+        <item>cafe mocha</item>-->
 
     </string-array>
 
