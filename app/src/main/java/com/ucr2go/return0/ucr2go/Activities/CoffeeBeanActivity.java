@@ -85,11 +85,12 @@ public class CoffeeBeanActivity extends ActionBarActivity {
                 2.21,
                 9.99,
                 10.00,
-                11.11
-
+                11.11,
+                1.00
         };
 
     private boolean[] coffee_presses = {
+            false,
             false,
             false,
             false,

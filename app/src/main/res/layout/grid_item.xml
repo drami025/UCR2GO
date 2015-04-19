@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/food_item"
             android:text="@string/filler"
-            android:textSize="18sp"
+            android:textSize="15sp"
             />
         <TextView
             android:layout_width="match_parent"

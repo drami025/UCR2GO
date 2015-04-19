@@ -37,6 +37,7 @@ public class TitleActivity extends ActionBarActivity {
                 switch(position){
                     case 0:
                         message = "JAVA LATTE SUPREME?";
+                        intent = new Intent(TitleActivity.this, CoffeeBeanActivity.class);
                         break;
                     case 1:
                         message = "MUY CALIENTE";
@@ -54,6 +55,7 @@ public class TitleActivity extends ActionBarActivity {
                         break;
                     case 5:
                         message = "EAT FRESH";
+                        intent = new Intent(TitleActivity.this, SubwayActivity.class);
                         break;
                 }
                 intent.putExtra("message", message);
