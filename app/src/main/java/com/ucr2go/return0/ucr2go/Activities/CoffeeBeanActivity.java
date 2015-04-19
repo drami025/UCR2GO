@@ -1,18 +1,23 @@
 package com.ucr2go.return0.ucr2go.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
 import com.ucr2go.return0.ucr2go.Model.CustomGridAdapter;
+import com.ucr2go.return0.ucr2go.Model.HashMapStringConverter;
+import com.ucr2go.return0.ucr2go.Model.Node;
 import com.ucr2go.return0.ucr2go.R;
 
 import java.text.DecimalFormat;
+import java.util.HashMap;
 
 
 public class CoffeeBeanActivity extends ActionBarActivity {
@@ -129,11 +134,24 @@ public class CoffeeBeanActivity extends ActionBarActivity {
     private GridView mGridView;
 
 
+    private HashMap<Integer, Node> mCoffeeSelections;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coffee_bean);
+        mCoffeeSelections = new HashMap<>();
+        Button coffee_bean_button = (Button) findViewById(R.id.continue_button_coffee_bean);
 
+        coffee_bean_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String json = HashMapStringConverter.hashMapToString(mCoffeeSelections);
+                Intent intent = new Intent(CoffeeBeanActivity.this, ResultsActivity.class);
+                intent.putExtra("hashmap", json);
+                startActivity(intent);
+            }
+        });
 
         mTotalPrice = (TextView) findViewById(R.id.total_price_coffee);
         mAdapter = new CustomGridAdapter(this, R.array.coffee_bean_items, mCoffeeBeanPics, coffee_price
@@ -150,9 +168,11 @@ public class CoffeeBeanActivity extends ActionBarActivity {
                 if (coffee_presses[position]) {
                     total_price -= price;
                     coffee_presses[position] = false;
+                    mCoffeeSelections.remove(position);
                 } else {
                     total_price += price;
                     coffee_presses[position] = true;
+                    mCoffeeSelections.put(position, new Node(mAdapter.getStringItem(position), price, mCoffeeBeanPics[position]));
                 }
 
                 DecimalFormat formatter = new DecimalFormat("#0.00");

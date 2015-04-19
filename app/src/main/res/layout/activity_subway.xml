@@ -22,5 +22,18 @@
     android:stretchMode="columnWidth"
     android:gravity="center"
     android:layout_below="@+id/total_price_subway"
+    android:layout_above="@+id/subway_button"
     />
+
+    <Button
+        android:id="@+id/subway_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom = "true"
+        android:layout_centerHorizontal="true"
+        android:text="continue"
+
+
+        />
+
 </RelativeLayout>

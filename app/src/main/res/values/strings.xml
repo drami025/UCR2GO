@@ -137,4 +137,11 @@
 
     <string name="title_activity_results">ResultsActivity</string>
     <string name="filler">filler</string>
+    <string name="title_activity_information">InformationActivity</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+
+    <string name="name_info">Your Name</string>
+    <string name="credit_info">Credit Number</string>
+    <string name="location_info">Location</string>
+
 </resources>

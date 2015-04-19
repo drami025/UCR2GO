@@ -1,18 +1,23 @@
 package com.ucr2go.return0.ucr2go.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
 import com.ucr2go.return0.ucr2go.Model.CustomGridAdapter;
+import com.ucr2go.return0.ucr2go.Model.HashMapStringConverter;
+import com.ucr2go.return0.ucr2go.Model.Node;
 import com.ucr2go.return0.ucr2go.R;
 
 import java.text.DecimalFormat;
+import java.util.HashMap;
 
 
 public class LaFiammaActivity extends ActionBarActivity {
@@ -39,11 +44,25 @@ public class LaFiammaActivity extends ActionBarActivity {
     private GridView mGridView;
     private boolean fiamma[] = {false,false,false,false,false};
     private boolean clickAllowed = true;
+    private HashMap<Integer, Node> mFiammaOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_la_fiamma);
+
+        mFiammaOrder = new HashMap<Integer, Node>();
+        Button button = (Button) findViewById(R.id.fiamma_buttoncontinue);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String json = HashMapStringConverter.hashMapToString(mFiammaOrder);
+                Intent intent = new Intent(LaFiammaActivity.this, ResultsActivity.class);
+                intent.putExtra("hashmap", json);
+                startActivity(intent);
+            }
+        });
 
         mTotalPrice = (TextView) findViewById(R.id.total_price_fiamma);
         mAdapter = new CustomGridAdapter(this, R.array.fiamma_food_items, null,
@@ -56,6 +75,7 @@ public class LaFiammaActivity extends ActionBarActivity {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
 
+                DecimalFormat formatter = new DecimalFormat("#0.00");
                 if(fiamma[0] && (fiamma_presses[0] || fiamma_presses[1] || fiamma_presses[2]) &&
                         (position>=0 && position<=2) && fiamma_presses[position] != true){
                     clickAllowed = false;
@@ -90,6 +110,7 @@ public class LaFiammaActivity extends ActionBarActivity {
                                 fiamma[2] = false;
                         }
 
+                        mFiammaOrder.remove(position);
                         fiamma_presses[position] = false;
 
                     } else {//unpressed before
@@ -106,12 +127,13 @@ public class LaFiammaActivity extends ActionBarActivity {
                                 fiamma[2] = true;
                         }
 
+                        mFiammaOrder.put(position, new Node(mAdapter.getStringItem(position), 0, 0) );
+
                         fiamma_presses[position] = true;
                     }
                 }
                 clickAllowed = true;
 
-                DecimalFormat formatter = new DecimalFormat("#0.00");
                 mGridView.invalidateViews();
             }
         });

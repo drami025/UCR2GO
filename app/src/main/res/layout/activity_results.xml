@@ -8,10 +8,26 @@
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 tools:context="com.ucr2go.return0.ucr2go.Activities.ResultsActivity">
 
-    <TextView
-        android:text="@string/hello_world"
-        android:id="@+id/result_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/selection_list"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/total_results_price"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/total_results_price"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"
+        android:id="@+id/submit_results_button"
+        android:layout_gravity="center"
+        android:layout_below="@+id/total_results_price"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>

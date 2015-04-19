@@ -4,8 +4,8 @@ package com.ucr2go.return0.ucr2go.Model;
  * Created by daniel on 4/19/15.
  */
 public class Node {
-    private int mDrawableId;
-    private double mPrice;
+    private Integer mDrawableId;
+    private Double mPrice;
     private String mName;
 
     public Node(String name, double price, int drawableId){

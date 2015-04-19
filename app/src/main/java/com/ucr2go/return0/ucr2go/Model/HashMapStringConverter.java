@@ -10,13 +10,14 @@ import java.util.List;
  */
 public class HashMapStringConverter {
 
-    public static String hashMapToString(List<Node> list){
+    public static String hashMapToString(HashMap<Integer, Node> list){
         Gson gson = new Gson();
         return gson.toJson(list);
     }
 
     public static HashMap<Integer, Node> stringToHashMap(String json){
         Gson gson = new Gson();
-        return gson.fromJson(json, HashMap.class);
+        HashMap<Integer, Node> hashMap = new HashMap<>();
+        return gson.fromJson(json, hashMap.getClass());
     }
 }
