@@ -83,7 +83,7 @@ public class ResultsAdapter extends ArrayAdapter {
                         DecimalFormat formatter = new DecimalFormat("#0.00");
                         double item_price = Double.valueOf(priceText.getText().toString());
                         priceText.setText("$" + formatter.format(item_price * amountMore) + "");
-                        ResultsAdapter.this.notifyDataSetChanged();
+                        //ResultsAdapter.this.notifyDataSetChanged();
                     }
                 }
             });
