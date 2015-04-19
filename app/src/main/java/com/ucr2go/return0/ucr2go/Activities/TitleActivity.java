@@ -43,6 +43,7 @@ public class TitleActivity extends ActionBarActivity {
                         break;
                     case 2:
                         message = "COMO SI CHIAMMA?";
+                        intent = new Intent(TitleActivity.this, LaFiammaActivity.class);
                         break;
                     case 3:
                         message = "FRIED CHICKEN...I GOT TIME FOR THAT.";

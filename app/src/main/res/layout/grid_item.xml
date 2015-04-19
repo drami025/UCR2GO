@@ -12,7 +12,7 @@
             android:maxWidth="60dp"
             android:adjustViewBounds="true"
             android:id="@+id/food_item_image"
-            android:src="@drawable/coffee_bean_logo"/>
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,7 +23,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/filler"
             android:textSize="12sp"
             android:id="@+id/item_price"
             />

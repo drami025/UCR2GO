@@ -27,7 +27,6 @@
         <item>Kung Pao Chicken</item>
         <item>Black Pepper Chicken</item>
         <item>Grilled Teriyaki Chicken</item>
-
         <item>Chinese Spare Ribs</item>
         <item>Broccoli Beef</item>
         <item>Shanghai Angus Steak</item>
@@ -47,6 +46,20 @@
         <item>Crispy Shrimp</item>
         <item>Fortune Cookies</item>
         <item>Chocolate Chunk Cookie</item>
+    </string-array>
+
+    <string-array name="fiamma_food_items" >
+        <item>Chicken</item>
+        <item>Sausage</item>
+        <item>Mushroom</item>
+        <item>Spinach</item>
+        <item>Tomato</item>
+        <item>Alfredo</item>
+        <item>Pesto</item>
+        <item>Sundried Tomato</item>
+        <item>Garlic Oil</item>
+        <item>Spicy Oil</item>
+        <item>Regular Oil</item>
     </string-array>
 
     <string-array name="coffee_bean_items">
