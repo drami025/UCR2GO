@@ -15,6 +15,36 @@
         <item>Panda Express</item>
         <item>Subway</item>
     </string-array>
+
+    <string-array name="panda_food_items" >
+        <item>Orange Chicken</item>
+        <item>Sweetfire Chicken Breast</item>
+        <item>String Bean Chicken Breast</item>
+        <item>Kung Pao Chicken</item>
+        <item>Mushroom Chicken</item>
+        <item>Black Pepper Chicken</item>
+        <item>Grilled Teriyaki Chicken</item>
+        <item>Chinese Spare Ribs</item>
+        <item>Broccoli Beef</item>
+        <item>Shanghai Angus Steak</item>
+        <item>Beijing Beef</item>
+        <item>Honey Walnut Shrimp</item>
+        <item>Eggplant Tofu</item>
+        <item>Chow Mein</item>
+        <item>Fried Rice</item>
+        <item>Mixed Veggies</item>
+        <item>White Steamed Rice</item>
+        <item>Brown Steamed Rice</item>
+        <item>Chicken Potsticker</item>
+        <item>Cream Cheese Rangoon</item>
+        <item>Chicken Egg Roll</item>
+        <item>Veggie Spring Roll</item>
+        <item>Hot and Sour Soup</item>
+        <item>Crispy Shrimp</item>
+        <item>Fortune Cookies</item>
+        <item>Chocolate Chunk Cookie</item>
+    </string-array>
+
     <string name="title_activity_results">ResultsActivity</string>
     <string name="filler">filler</string>
 </resources>

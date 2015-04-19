@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import com.ucr2go.return0.ucr2go.Model.CustomGridAdapter;
 import com.ucr2go.return0.ucr2go.R;
 
 
@@ -20,7 +21,7 @@ public class PandaActivity extends ActionBarActivity {
         setContentView(R.layout.activity_panda);
 
         GridView gridview = (GridView) findViewById(R.id.gridview);
-        gridview.setAdapter(new ImageAdapter(this));
+        gridview.setAdapter(new CustomGridAdapter(this, R.array.panda_food_items));
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
@@ -28,6 +29,7 @@ public class PandaActivity extends ActionBarActivity {
                 Toast.makeText(PandaActivity.this, "" + position,
                         Toast.LENGTH_SHORT).show();
             }
+        });
     }
 
 
