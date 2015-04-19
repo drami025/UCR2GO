@@ -27,7 +27,7 @@ public class InformationActivity extends ActionBarActivity {
         setContentView(R.layout.activity_information);
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra(InformationActivity.EXTRA_MESSAGE);
+        //String message = intent.getStringExtra(InformationActivity.EXTRA_MESSAGE);
 
 
     }

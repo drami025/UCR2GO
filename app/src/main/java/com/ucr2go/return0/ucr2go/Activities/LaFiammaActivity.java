@@ -52,7 +52,7 @@ public class LaFiammaActivity extends ActionBarActivity {
         setContentView(R.layout.activity_la_fiamma);
 
         mFiammaOrder = new HashMap<Integer, Node>();
-        Button button = (Button) findViewById(R.id.panda_buttoncontinue_);
+        Button button = (Button) findViewById(R.id.fiamma_buttoncontinue);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +75,7 @@ public class LaFiammaActivity extends ActionBarActivity {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
 
+                DecimalFormat formatter = new DecimalFormat("#0.00");
                 if(fiamma[0] && (fiamma_presses[0] || fiamma_presses[1] || fiamma_presses[2]) &&
                         (position>=0 && position<=2) && fiamma_presses[position] != true){
                     clickAllowed = false;
@@ -133,7 +134,6 @@ public class LaFiammaActivity extends ActionBarActivity {
                 }
                 clickAllowed = true;
 
-                DecimalFormat formatter = new DecimalFormat("#0.00");
                 mGridView.invalidateViews();
             }
         });
