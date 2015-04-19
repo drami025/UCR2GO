@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ucr2go.return0.ucr2go.Model.CustomGridAdapter;
@@ -71,13 +72,15 @@ public class PandaActivity extends ActionBarActivity {
             0.99
     };
 
-    CustomGridAdapter mAdapter;
+    private CustomGridAdapter mAdapter;
+    private TextView mTotalPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panda);
 
+        mTotalPrice = (TextView) findViewById(R.id.total_price_panda);
         mAdapter = new CustomGridAdapter(this, R.array.panda_food_items, panda_food, panda_food_prices);
 
         GridView gridview = (GridView) findViewById(R.id.panda_gridview);
@@ -86,7 +89,10 @@ public class PandaActivity extends ActionBarActivity {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
+                Double total_price = Double.valueOf(mTotalPrice.getText().toString());
                 Double price = (Double) mAdapter.getItem(position);
+                total_price += price;
+                mTotalPrice.setText(total_price + "");
                 Toast.makeText(PandaActivity.this, "" + price,
                         Toast.LENGTH_SHORT).show();
             }
