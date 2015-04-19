@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -123,15 +124,6 @@ public class PandaActivity extends ActionBarActivity {
         mPandaOrder = new HashMap<Integer, Node>();
         Button button = (Button) findViewById(R.id.panda_buttoncontinue_);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String json = HashMapStringConverter.hashMapToString(mPandaOrder);
-                Intent intent = new Intent(PandaActivity.this, ResultsActivity.class);
-                intent.putExtra("hashmap", json);
-                startActivity(intent);
-            }
-        });
         mTotalPrice = (TextView) findViewById(R.id.total_price_panda);
         mAdapter = new CustomGridAdapter(this, R.array.panda_food_items, panda_food,
                 panda_food_prices, panda_presses);
@@ -149,7 +141,7 @@ public class PandaActivity extends ActionBarActivity {
                     total_price -= price;
                     panda_presses[position] = false;
                 } else {
-                    mPandaOrder.put(position, new Node(mAdapter.getStringItem(position), price, panda_food[position]) );
+                    mPandaOrder.put(position, new Node(mAdapter.getStringItem(position), price, panda_food[position]));
 
                     total_price += price;
                     panda_presses[position] = true;
@@ -158,6 +150,16 @@ public class PandaActivity extends ActionBarActivity {
                 DecimalFormat formatter = new DecimalFormat("#0.00");
                 mTotalPrice.setText("$" + formatter.format(total_price));
                 mGridView.invalidateViews();
+            }
+        });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String json = HashMapStringConverter.hashMapToString(mPandaOrder);
+                Intent intent = new Intent(PandaActivity.this, ResultsActivity.class);
+                intent.putExtra("hashmap", json);
+                startActivity(intent);
             }
         });
     }

@@ -1,7 +1,9 @@
 package com.ucr2go.return0.ucr2go.Model;
 
+import android.app.Activity;
 import android.content.Context;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,22 +27,24 @@ public class ResultsAdapter extends ArrayAdapter {
     private String[] mNames;
     private Context mContext;
 
-    public ResultsAdapter(Context context, HashMap<Integer, Node> hashMap, String[] names) {
+    public ResultsAdapter(Context context, HashMap<Integer, Node> hashMap, String[] names, int size) {
         super(context, R.layout.selection_list_item, names);
-        int size = hashMap.size();
         mNames = new String[size];
         mDrawableIds = new Integer[size];
         mPrices = new Double[size];
         mContext = context;
 
-        Collection<Node> collection = hashMap.values();
-
         int i = 0;
-        for(Node n : collection){
-            mNames[i] = n.getName();
-            mDrawableIds[i] = n.getDrawableId();
-            mPrices[i] = n.getPrice();
-            i++;
+        for(int j = 0; j < 40; j++){
+            Node n = hashMap.get(j);
+
+            if(n != null) {
+                mNames[i] = n.getName();
+                mDrawableIds[i] = n.getDrawableId();
+                mPrices[i] = n.getPrice();
+                i++;
+                Log.e("CHECK NAME", n.getName());
+            }
         }
     }
 
@@ -59,14 +63,16 @@ public class ResultsAdapter extends ArrayAdapter {
         ImageView image = (ImageView) rowView.findViewById(R.id.result_image);
         EditText addMoreText = (EditText) rowView.findViewById(R.id.result_add_more);
 
-        int amountMore = Integer.getInteger(addMoreText.getText().toString());
+
+        int amountMore = 1; // Integer.getInteger(addMoreText.getText().toString());
 
         if(mPrices[position] == 0){
             priceText.setVisibility(View.INVISIBLE);
             addMoreText.setVisibility(View.INVISIBLE);
         }
         else{
-            int item_price = Integer.getInteger(priceText.getText().toString());
+            priceText.setText(mPrices[position] + "");
+            double item_price = Double.valueOf(priceText.getText().toString());
             priceText.setText(item_price * amountMore + "");
         }
 
