@@ -48,6 +48,30 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.TitleActivity" />
         </activity>
+        <activity
+            android:name=".Activities.PandaActivity"
+            android:label="@string/title_activity_panda_express"
+            android:parentActivityName=".Activities.TitleActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.TitleActivity" />
+        </activity>
+        <activity
+            android:name=".Activities.LatitudeActivity"
+            android:label="@string/title_activity_latitude"
+            android:parentActivityName=".Activities.TitleActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.TitleActivity" />
+        </activity>
+        <activity
+            android:name=".Activities.SubwayActivity"
+            android:label="@string/title_activity_subway"
+            android:parentActivityName=".Activities.TitleActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.TitleActivity" />
+        </activity>
     </application>
 
 </manifest>

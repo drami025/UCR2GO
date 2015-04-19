@@ -4,18 +4,141 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.GridView;
+import android.widget.TextView;
 
+import com.ucr2go.return0.ucr2go.Model.CustomGridAdapter;
 import com.ucr2go.return0.ucr2go.R;
+
+
 
 
 public class CoffeeBeanActivity extends ActionBarActivity {
 
+    //private array of ints for coffee images
+    private int mCoffeeBeanPics[] = {
+     R.drawable.coffee_bean01,
+     R.drawable.coffee_bean02,
+     R.drawable.coffee_bean03,
+     R.drawable.coffee_bean04,
+     R.drawable.coffee_bean05,
+     R.drawable.coffee_bean06,
+     R.drawable.coffee_bean07,
+     R.drawable.coffee_bean08,
+     R.drawable.coffee_bean09,
+     R.drawable.coffee_bean10,
+     R.drawable.coffee_bean11,
+     R.drawable.coffee_bean12,
+     R.drawable.coffee_bean13,
+     R.drawable.coffee_bean14,
+     R.drawable.coffee_bean15,
+     R.drawable.coffee_bean16,
+     R.drawable.coffee_bean17,
+     R.drawable.coffee_bean18,
+     R.drawable.coffee_bean19,
+     R.drawable.coffee_bean20,
+     R.drawable.coffee_bean21,
+     R.drawable.coffee_bean22,
+     R.drawable.coffee_bean23,
+     R.drawable.coffee_bean24,
+     R.drawable.coffee_bean25,
+     R.drawable.coffee_bean26,
+     R.drawable.coffee_bean27,
+     R.drawable.coffee_bean28,
+     R.drawable.coffee_bean29,
+     R.drawable.coffee_bean30,
+     R.drawable.coffee_bean31,
+     R.drawable.coffee_bean32
+    };
+
+    //private double array for the prices
+    private double coffee_price[] =
+        {
+                1.55,
+                3.14,
+                1.01,
+                5.00,
+                88.89,
+                2.13,
+                4.32,
+                2.21,
+                9.99,
+                10.00,
+                1.55,
+                3.14,
+                1.01,
+                5.00,
+                88.89,
+                2.13,
+                4.32,
+                2.21,
+                9.99,
+                5.95,
+                1.55,
+                3.14,
+                1.31,
+                6.66,
+                88.89,
+                2.13,
+                4.32,
+                2.21,
+                9.99,
+                10.00,
+                11.11,
+                12.13
+        };
+
+    private boolean[] coffee_presses = {
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+    };
+
+    private CustomGridAdapter mAdapter;
+    private TextView mTotalPrice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coffee_bean);
-    }
 
+
+        //mTotalPrice = (TextView) findViewById(R.id.)
+        mAdapter = new CustomGridAdapter(this, R.array.coffee_bean_items, mCoffeeBeanPics, coffee_price
+        , coffee_presses);
+
+        GridView coffee_grid = (GridView) findViewById(R.id.coffee_bean_grid_view);
+        coffee_grid.setAdapter(mAdapter);
+        //coffee_grid.setAdapter(new CustomGridAdapter(this, R.array.coffee_bean_items, food_price);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
