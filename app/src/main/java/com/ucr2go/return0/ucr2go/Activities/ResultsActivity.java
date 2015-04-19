@@ -53,6 +53,7 @@ public class ResultsActivity extends ActionBarActivity {
         }
 
         ListView resultList = (ListView) findViewById(R.id.selection_list);
+        resultList.setItemsCanFocus(true);
         resultList.setAdapter(new ResultsAdapter(this, mSelections, names, i));
     }
 
