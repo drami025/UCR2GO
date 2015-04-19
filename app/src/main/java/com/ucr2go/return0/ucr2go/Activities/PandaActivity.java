@@ -74,6 +74,34 @@ public class PandaActivity extends ActionBarActivity {
             0.99
     };
 
+    private Boolean[] panda_presses = {
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+    };
+
     private CustomGridAdapter mAdapter;
     private TextView mTotalPrice;
 
@@ -93,11 +121,14 @@ public class PandaActivity extends ActionBarActivity {
                                     int position, long id) {
                 Double total_price = Double.valueOf(mTotalPrice.getText().toString().substring(1));
                 Double price = (Double) mAdapter.getItem(position);
-                total_price += price;
+
+                if(panda_presses[position])
+                    total_price += price;
+                else
+                    total_price -= price;
+
                 DecimalFormat formatter = new DecimalFormat("#0.00");
                 mTotalPrice.setText("$" + formatter.format(total_price));
-                Toast.makeText(PandaActivity.this, "" + price,
-                        Toast.LENGTH_SHORT).show();
             }
         });
     }
