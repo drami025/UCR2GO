@@ -14,9 +14,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ucr2go.return0.ucr2go.Model.CustomGridAdapter;
+import com.ucr2go.return0.ucr2go.Model.Node;
 import com.ucr2go.return0.ucr2go.R;
 
 import java.text.DecimalFormat;
+import java.util.HashMap;
 
 
 public class PandaActivity extends ActionBarActivity {
@@ -108,12 +110,14 @@ public class PandaActivity extends ActionBarActivity {
     private CustomGridAdapter mAdapter;
     private TextView mTotalPrice;
     private GridView mGridView;
+    private HashMap<Integer, Node> mPandaOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panda);
 
+        mPandaOrder = new HashMap<>();
         mTotalPrice = (TextView) findViewById(R.id.total_price_panda);
         mAdapter = new CustomGridAdapter(this, R.array.panda_food_items, panda_food,
                 panda_food_prices, panda_presses);
@@ -127,9 +131,11 @@ public class PandaActivity extends ActionBarActivity {
                 Double total_price = Double.valueOf(mTotalPrice.getText().toString().substring(1));
                 Double price = (Double) mAdapter.getItem(position);
                 if (panda_presses[position]) {
+                    mPandaOrder.put(position, new Node(mAdapter.getStringItem(position), price, panda_food[position]) );
                     total_price -= price;
                     panda_presses[position] = false;
                 } else {
+                    mPandaOrder.remove(position);
                     total_price += price;
                     panda_presses[position] = true;
                 }

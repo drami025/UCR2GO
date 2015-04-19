@@ -10,9 +10,11 @@ import android.widget.GridView;
 import android.widget.TextView;
 
 import com.ucr2go.return0.ucr2go.Model.CustomGridAdapter;
+import com.ucr2go.return0.ucr2go.Model.Node;
 import com.ucr2go.return0.ucr2go.R;
 
 import java.text.DecimalFormat;
+import java.util.HashMap;
 
 
 public class LaFiammaActivity extends ActionBarActivity {
@@ -39,6 +41,7 @@ public class LaFiammaActivity extends ActionBarActivity {
     private GridView mGridView;
     private boolean fiamma[] = {false,false,false,false,false};
     private boolean clickAllowed = true;
+    private HashMap<Integer, Node> mFiammaOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +93,7 @@ public class LaFiammaActivity extends ActionBarActivity {
                                 fiamma[2] = false;
                         }
 
+                        mFiammaOrder.put(position, new Node(mAdapter.getStringItem(position), 0, 0) );
                         fiamma_presses[position] = false;
 
                     } else {//unpressed before
@@ -106,6 +110,8 @@ public class LaFiammaActivity extends ActionBarActivity {
                                 fiamma[2] = true;
                         }
 
+
+                        mFiammaOrder.remove(position);
                         fiamma_presses[position] = true;
                     }
                 }
