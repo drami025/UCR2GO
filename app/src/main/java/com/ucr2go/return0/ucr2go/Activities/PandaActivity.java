@@ -16,6 +16,12 @@ import com.ucr2go.return0.ucr2go.R;
 public class PandaActivity extends ActionBarActivity {
 
     private int[] panda_food = {
+            R.drawable.panda_express_orangechicken,
+            R.drawable.panda_express_sweetfirechickenbreast,
+            R.drawable.panda_express_stringbeanchickenbreast,
+            R.drawable.panda_express_kungpaochicken,
+            R.drawable.panda_express_blackpepperchicken,
+            R.drawable.panda_express_teriyakichicken,
             R.drawable.panda_expressribs,
             R.drawable.panda_express_broccolibeef,
             R.drawable.panda_express_shainghaiangussteak,
@@ -35,15 +41,6 @@ public class PandaActivity extends ActionBarActivity {
             R.drawable.panda_express_friedshrimp,
             R.drawable.panda_express_fortunecookie,
             R.drawable.panda_express_cookie
-  /*put these before everything
-    Orange Chicken
-            Sweetfire Chicken Breast
-            String Bean Chicken Breast
-            Kung Pao Chicken
-            Mushroom Chicken
-            Black Pepper Chicken
-            Grilled Teriyaki Chicken
-*/
     };
 
     @Override
