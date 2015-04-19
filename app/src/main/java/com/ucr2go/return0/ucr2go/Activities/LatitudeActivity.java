@@ -66,7 +66,7 @@ public class LatitudeActivity extends ActionBarActivity {
                 Double price = (Double) mAdapter.getItem(position);
                 if (latitude_presses[position]) {
                     total_price -= price;
-                    panda_presses[position] = false;
+                    latitude_presses[position] = false;
                 } else {
                     total_price += price;
                     latitude_presses[position] = true;

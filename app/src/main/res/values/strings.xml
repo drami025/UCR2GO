@@ -111,7 +111,7 @@
         <item>cafe vanilla</item>
     </string-array>
 
-    <string-array name="latitude_items">
+    <string-array name="latitude_food_items">
         <item>Chicken Strips</item>
         <item>Hamburger</item>
         <item>Double Cheese Burger</item>
@@ -119,6 +119,21 @@
         <item>Fries</item>
     </string-array>
 
+
+    <string-array name="subway_food_items">
+        <item>Black Forest Ham</item>
+        <item>BLT</item>
+        <item>Meatball Marinara</item>
+        <item>Prime Rib and Cheese</item>
+        <item>Seafood Sensation</item>
+        <item>Spicy Italian</item>
+        <item>Steak and Cheese</item>
+        <item>Tuna</item>
+        <item>Veggie Delite</item>
+        <item>Egg and Cheese</item>
+        <item>Egg and Ham</item>
+        <item>Chicken Bacon Ranch</item>
+    </string-array>
 
     <string name="title_activity_results">ResultsActivity</string>
     <string name="filler">filler</string>
