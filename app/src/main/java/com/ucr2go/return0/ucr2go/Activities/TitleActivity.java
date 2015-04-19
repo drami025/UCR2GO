@@ -41,7 +41,8 @@ public class TitleActivity extends ActionBarActivity {
                         break;
                     case 1:
                         message = "MUY CALIENTE";
-                        break;
+                        Toast.makeText(TitleActivity.this, message, Toast.LENGTH_LONG).show();
+                        return;
                     case 2:
                         message = "COMO SI CHIAMMA?";
                         intent = new Intent(TitleActivity.this, LaFiammaActivity.class);

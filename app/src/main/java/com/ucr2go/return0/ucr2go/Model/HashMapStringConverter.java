@@ -17,6 +17,7 @@ public class HashMapStringConverter {
 
     public static HashMap<Integer, Node> stringToHashMap(String json){
         Gson gson = new Gson();
-        return gson.fromJson(json, HashMap.class);
+        HashMap<Integer, Node> hashMap = new HashMap<>();
+        return gson.fromJson(json, hashMap.getClass());
     }
 }

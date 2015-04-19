@@ -3,19 +3,24 @@ package com.ucr2go.return0.ucr2go.Activities;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.ucr2go.return0.ucr2go.Model.HashMapStringConverter;
 import com.ucr2go.return0.ucr2go.Model.Node;
 import com.ucr2go.return0.ucr2go.Model.ResultsAdapter;
 import com.ucr2go.return0.ucr2go.R;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -28,19 +33,27 @@ public class ResultsActivity extends ActionBarActivity {
         setContentView(R.layout.activity_results);
         Intent intent = getIntent();
         String result_message = intent.getStringExtra("hashmap");
-        mSelections = HashMapStringConverter.stringToHashMap(result_message);
+
+        Type mapType = new TypeToken<HashMap<Integer, Node>>(){}.getType();
+
+        mSelections = new Gson().fromJson(result_message, mapType);
 
         Collection<Node> hashmap = mSelections.values();
         int size = hashmap.size();
         String[] names = new String[size];
         int i = 0;
-        for(Node n : hashmap){
-            names[i] = n.getName();
-            i++;
+
+        for(int j = 0; j < 40; j++){
+            Node n = mSelections.get(j);
+            if(n != null){
+                names[i] = n.getName();
+                i++;
+                Log.e("NAME", n.getName());
+            }
         }
 
         ListView resultList = (ListView) findViewById(R.id.selection_list);
-        resultList.setAdapter(new ResultsAdapter(this, mSelections, names));
+        resultList.setAdapter(new ResultsAdapter(this, mSelections, names, i));
     }
 
     @Override
