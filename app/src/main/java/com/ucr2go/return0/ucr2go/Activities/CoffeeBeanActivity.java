@@ -54,8 +54,7 @@ public class CoffeeBeanActivity extends ActionBarActivity {
     };
 
     //private double array for the prices
-    private double coffee_price[] =
-        {
+    private double coffee_price[] =  {
                 1.55,
                 3.14,
                 1.01,
@@ -122,7 +121,6 @@ public class CoffeeBeanActivity extends ActionBarActivity {
             false,
             false,
             false
-
     };
 
     private CustomGridAdapter mAdapter;
