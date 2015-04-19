@@ -5,27 +5,42 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.ucr2go.return0.ucr2go.Model.HashMapStringConverter;
 import com.ucr2go.return0.ucr2go.Model.Node;
+import com.ucr2go.return0.ucr2go.Model.ResultsAdapter;
 import com.ucr2go.return0.ucr2go.R;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class ResultsActivity extends ActionBarActivity {
 
     private HashMap<Integer, Node> mSelections;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
-        TextView resultText = (TextView) findViewById(R.id.result_text);
         Intent intent = getIntent();
         String result_message = intent.getStringExtra("hashmap");
         mSelections = HashMapStringConverter.stringToHashMap(result_message);
+
+        Collection<Node> hashmap = mSelections.values();
+        int size = hashmap.size();
+        String[] names = new String[size];
+        int i = 0;
+        for(Node n : hashmap){
+            names[i] = n.getName();
+            i++;
+        }
+
+        ListView resultList = (ListView) findViewById(R.id.selection_list);
+        resultList.setAdapter(new ResultsAdapter(this, mSelections, names));
     }
 
     @Override
