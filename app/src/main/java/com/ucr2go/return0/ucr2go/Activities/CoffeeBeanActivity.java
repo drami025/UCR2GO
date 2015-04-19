@@ -140,7 +140,7 @@ public class CoffeeBeanActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coffee_bean);
-        mCoffeeSelections = new HashMap<>();
+        mCoffeeSelections = new HashMap<Integer, Node>();
         Button coffee_bean_button = (Button) findViewById(R.id.continue_button_coffee_bean);
 
         coffee_bean_button.setOnClickListener(new View.OnClickListener() {
