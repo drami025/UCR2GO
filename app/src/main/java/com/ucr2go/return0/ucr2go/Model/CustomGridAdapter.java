@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ucr2go.return0.ucr2go.R;
@@ -65,18 +67,18 @@ public class CustomGridAdapter extends BaseAdapter{
             grid = inflater.inflate(R.layout.grid_item, parent, false);
 
         }
-
-        if(mPressed[position]){
-            parent.setBackgroundColor(Color.parseColor("#FFFFFFFF"));
-        }
-        else{
-            parent.setBackgroundColor(Color.parseColor("#00000000"));
-        }
-
+        LinearLayout layout = (LinearLayout) grid.findViewById(R.id.grid_item_layout);
         TextView foodNameTextView = (TextView) grid.findViewById(R.id.food_item);
         ImageView imageView = (ImageView)grid.findViewById(R.id.food_item_image);
         foodNameTextView.setText(mfood_items[position]);
         imageView.setImageResource(mfood_pics[position]);
+
+        if(mPressed[position]){
+            layout.setBackgroundColor(Color.parseColor("#FFFFFFFF"));
+        }
+        else{
+            layout.setBackgroundColor(Color.parseColor("#00000000"));
+        }
 
         if(mfood_prices != null){
             TextView foodPriceTextView = (TextView) grid.findViewById(R.id.item_price);
@@ -85,15 +87,5 @@ public class CustomGridAdapter extends BaseAdapter{
 
         return grid;
 
-    }
-    
-    public void setPressed(int position){
-
-        if(mPressed[position]){
-            mPressed[position] = false;
-        }
-        else{
-            mPressed[position] = true;
-        }
     }
 }

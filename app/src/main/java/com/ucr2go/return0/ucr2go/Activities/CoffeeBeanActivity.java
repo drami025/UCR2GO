@@ -88,7 +88,7 @@ public class CoffeeBeanActivity extends ActionBarActivity {
                 12.13
         };
 
-    private Boolean[] coffee_presses = {
+    private boolean[] coffee_presses = {
             false,
             false,
             false,
@@ -132,7 +132,8 @@ public class CoffeeBeanActivity extends ActionBarActivity {
 
 
         //mTotalPrice = (TextView) findViewById(R.id.)
-        mAdapter = new CustomGridAdapter(this, R.array.coffee_bean_items, mCoffeeBeanPics, coffee_price);
+        mAdapter = new CustomGridAdapter(this, R.array.coffee_bean_items, mCoffeeBeanPics, coffee_price
+        , coffee_presses);
 
         GridView coffee_grid = (GridView) findViewById(R.id.coffee_bean_grid_view);
         coffee_grid.setAdapter(mAdapter);

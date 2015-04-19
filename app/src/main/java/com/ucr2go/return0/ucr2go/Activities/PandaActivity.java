@@ -136,6 +136,7 @@ public class PandaActivity extends ActionBarActivity {
 
                 DecimalFormat formatter = new DecimalFormat("#0.00");
                 mTotalPrice.setText("$" + formatter.format(total_price));
+                mGridView.invalidateViews();
             }
         });
     }
