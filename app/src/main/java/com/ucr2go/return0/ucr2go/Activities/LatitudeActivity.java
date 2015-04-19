@@ -21,11 +21,11 @@ public class LatitudeActivity extends ActionBarActivity {
 
 
     private int[] latitude_food = {
-            R.drawable.latitude_Chickenstrips,
-            R.drawable.latitude_Hamburger,
-            R.drawable.latitude_DoubleCheeseBurger,
-            R.drawable.latitude_GrilledCheese,
-            R.drawable.latitude_Fries
+            R.drawable.latitude_chickenstrips,
+            R.drawable.latitude_hamburger,
+            R.drawable.latitude_doublecheeseburger,
+            R.drawable.latitude_grilledcheese,
+            R.drawable.latitude_fries
     };
 
     private double[] latitude_food_prices = {

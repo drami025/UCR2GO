@@ -48,6 +48,7 @@ public class TitleActivity extends ActionBarActivity {
                         break;
                     case 3:
                         message = "FRIED CHICKEN...I GOT TIME FOR THAT.";
+                        intent = new Intent(TitleActivity.this, LatitudeActivity.class);
                         break;
                     case 4:
                         message = "FORTUNE COOKIE ALWAYS WRONG";
