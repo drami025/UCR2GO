@@ -143,5 +143,5 @@
     <string name="name_info">Your Name</string>
     <string name="credit_info">Credit Number</string>
     <string name="location_info">Location</string>
-
+    <string name="buttoninfo">Confirm</string>
 </resources>

@@ -25,7 +25,7 @@
         android:inputType="number"
         android:hint="@string/credit_info"
         android:ems="10"
-        android:id="@+id/credit_info"
+        android:id="@+id/credit"
         android:layout_below="@+id/info"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp" />
@@ -36,19 +36,20 @@
         android:inputType="textPostalAddress"
         android:hint="@string/location_info"
         android:ems="10"
-        android:id="@+id/id_info"
-        android:layout_below="@+id/credit_info"
+        android:id="@+id/location"
+        android:layout_below="@+id/credit"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="41dp" />
 
     <Button
         android:layout_width="wrap_content"
+        android:onClick="sendMessage"
         android:layout_height="wrap_content"
-        android:text="Confirm Order"
-        android:id="@+id/button"
-        android:layout_below="@+id/editText3"
+        android:hint="@string/buttoninfo"
+        android:id="@+id/buttoninfo"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="83dp" />
+        android:layout_marginBottom="105dp" />
 
 
 </RelativeLayout>
