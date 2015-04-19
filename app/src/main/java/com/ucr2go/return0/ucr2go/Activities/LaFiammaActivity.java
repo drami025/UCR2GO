@@ -37,10 +37,7 @@ public class LaFiammaActivity extends ActionBarActivity {
     private CustomGridAdapter mAdapter;
     private TextView mTotalPrice;
     private GridView mGridView;
-    private boolean meat = false;
-    private boolean veggie[] = {false, false};
-    private boolean sauce = false;
-    private boolean oil = false;
+    private boolean fiamma[] = {false,false,false,false,false};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +54,8 @@ public class LaFiammaActivity extends ActionBarActivity {
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
+
+               // if(fiamma[0] && (fiamma_presses[0] || fiamma_presses[1] || fiamma_presses[2]) )
 
                 if (fiamma_presses[position]) {
                     fiamma_presses[position] = false;
