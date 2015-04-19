@@ -72,6 +72,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.TitleActivity" />
         </activity>
+        <activity
+            android:name=".Activities.InformationActivity"
+            android:label="@string/title_activity_information"
+            android:parentActivityName=".Activities.ResultsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ucr2go.return0.ucr2go.Activities.ResultsActivity" />
+        </activity>
     </application>
 
 </manifest>

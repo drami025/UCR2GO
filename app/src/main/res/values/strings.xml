@@ -137,4 +137,5 @@
 
     <string name="title_activity_results">ResultsActivity</string>
     <string name="filler">filler</string>
+    <string name="title_activity_information">InformationActivity</string>
 </resources>
