@@ -71,18 +71,23 @@ public class PandaActivity extends ActionBarActivity {
             0.99
     };
 
+    CustomGridAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panda);
 
+        mAdapter = new CustomGridAdapter(this, R.array.panda_food_items, panda_food, panda_food_prices);
+
         GridView gridview = (GridView) findViewById(R.id.panda_gridview);
-        gridview.setAdapter(new CustomGridAdapter(this, R.array.panda_food_items, panda_food, panda_food_prices));
+        gridview.setAdapter(mAdapter);
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Toast.makeText(PandaActivity.this, "" + position,
+                Double price = (Double) mAdapter.getItem(position);
+                Toast.makeText(PandaActivity.this, "" + price,
                         Toast.LENGTH_SHORT).show();
             }
         });
