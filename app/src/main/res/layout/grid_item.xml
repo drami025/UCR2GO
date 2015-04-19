@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
@@ -7,12 +7,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:id="@+id/menu_item_image"/>
+        android:id="@+id/food_item_image"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/restaurant_menu_item"
+        android:id="@+id/food_item"
+        android:layout_alignEnd="@+id/food_item_image"
+        android:layout_alignRight="@+id/food_item_image"
         android:text="@string/filler"
         android:textSize="25sp"
         android:layout_gravity="center"/>
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/food_item"
+        android:layout_alignEnd="@+id/food_item_image"
+        android:layout_alignRight="@+id/food_item_image"
+        android:text="@string/filler"
+        android:textSize="18sp"
+        android:id="@+id/item_price"/>
+</RelativeLayout>
