@@ -81,7 +81,7 @@ public class SubwayActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subway);
 
-        mSubwaySelections = new Hashmap<>();
+        mSubwaySelections = new HashMap<>();
         Button subway_button = (Button) findViewById(R.id.subway_button);
 
         subway_button.setOnClickListener(new View.OnClickListener() {
