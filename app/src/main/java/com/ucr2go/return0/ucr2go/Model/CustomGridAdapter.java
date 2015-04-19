@@ -1,6 +1,7 @@
 package com.ucr2go.return0.ucr2go.Model;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ public class CustomGridAdapter extends BaseAdapter{
     private String[] mfood_items;
     private int[] mfood_pics;
     private double[] mfood_prices;
+    private boolean[] mPressed;
 
     public CustomGridAdapter(Context c, int string_array_id, int[] drawable_id_array) {
         mfood_items = c.getResources().getStringArray(string_array_id);
@@ -27,11 +29,13 @@ public class CustomGridAdapter extends BaseAdapter{
         mContext = c;
     }
 
-    public CustomGridAdapter(Context c, int string_array_id, int[] drawable_id_array, double[] prices){
+    public CustomGridAdapter(Context c, int string_array_id, int[] drawable_id_array, double[] prices,
+                             boolean[] presses){
         mfood_items = c.getResources().getStringArray(string_array_id);
         mfood_pics = drawable_id_array;
         mContext = c;
         mfood_prices = prices;
+        mPressed = presses;
     }
 
     @Override
@@ -62,6 +66,13 @@ public class CustomGridAdapter extends BaseAdapter{
 
         }
 
+        if(mPressed[position]){
+            parent.setBackgroundColor(Color.parseColor("#FFFFFFFF"));
+        }
+        else{
+            parent.setBackgroundColor(Color.parseColor("#00000000"));
+        }
+
         TextView foodNameTextView = (TextView) grid.findViewById(R.id.food_item);
         ImageView imageView = (ImageView)grid.findViewById(R.id.food_item_image);
         foodNameTextView.setText(mfood_items[position]);
@@ -74,5 +85,15 @@ public class CustomGridAdapter extends BaseAdapter{
 
         return grid;
 
+    }
+    
+    public void setPressed(int position){
+
+        if(mPressed[position]){
+            mPressed[position] = false;
+        }
+        else{
+            mPressed[position] = true;
+        }
     }
 }
