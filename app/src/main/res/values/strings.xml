@@ -111,6 +111,15 @@
 
     </string-array>
 
+    <string-array name="latitude_food_items">
+        <item>Chicken Strips</item>
+        <item>Hamburger</item>
+        <item>Double Cheese Burger</item>
+        <item>Grilled Cheese</item>
+        <item>Fries</item>
+    </string-array>
+
+
     <string-array name="subway_food_items">
         <item>Black Forest Ham</item>
         <item>BLT</item>
