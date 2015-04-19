@@ -63,6 +63,8 @@ public class LatitudeActivity extends ActionBarActivity {
         mGridView = (GridView) findViewById(R.id.latitude_gridview);
         mGridView.setAdapter(mAdapter);
 
+        checkout_list = new LinkedList<Node>();
+
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
