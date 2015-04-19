@@ -19,7 +19,8 @@
         <activity
             android:name=".Activities.ResultsActivity"
             android:label="@string/title_activity_results"
-            android:parentActivityName=".Activities.TitleActivity" >
+            android:parentActivityName=".Activities.TitleActivity"
+            android:windowSoftInputMode="adjustPan">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.TitleActivity" />

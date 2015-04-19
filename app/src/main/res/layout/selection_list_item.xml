@@ -23,6 +23,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.25"
+        android:inputType="numberDecimal"
         android:id="@+id/result_add_more"
         android:text="1"/>
 
