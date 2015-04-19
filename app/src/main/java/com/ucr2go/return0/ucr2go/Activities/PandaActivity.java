@@ -1,12 +1,15 @@
 package com.ucr2go.return0.ucr2go.Activities;
 
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -74,7 +77,7 @@ public class PandaActivity extends ActionBarActivity {
             0.99
     };
 
-    private Boolean[] panda_presses = {
+    private boolean[] panda_presses = {
             false,
             false,
             false,
@@ -104,6 +107,7 @@ public class PandaActivity extends ActionBarActivity {
 
     private CustomGridAdapter mAdapter;
     private TextView mTotalPrice;
+    private GridView mGridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,21 +115,24 @@ public class PandaActivity extends ActionBarActivity {
         setContentView(R.layout.activity_panda);
 
         mTotalPrice = (TextView) findViewById(R.id.total_price_panda);
-        mAdapter = new CustomGridAdapter(this, R.array.panda_food_items, panda_food, panda_food_prices);
+        mAdapter = new CustomGridAdapter(this, R.array.panda_food_items, panda_food,
+                panda_food_prices, panda_presses);
 
-        GridView gridview = (GridView) findViewById(R.id.panda_gridview);
-        gridview.setAdapter(mAdapter);
+        mGridView = (GridView) findViewById(R.id.panda_gridview);
+        mGridView.setAdapter(mAdapter);
 
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
                 Double total_price = Double.valueOf(mTotalPrice.getText().toString().substring(1));
                 Double price = (Double) mAdapter.getItem(position);
-
-                if(panda_presses[position])
-                    total_price += price;
-                else
+                if (panda_presses[position]) {
                     total_price -= price;
+                    panda_presses[position] = false;
+                } else {
+                    total_price += price;
+                    panda_presses[position] = true;
+                }
 
                 DecimalFormat formatter = new DecimalFormat("#0.00");
                 mTotalPrice.setText("$" + formatter.format(total_price));
