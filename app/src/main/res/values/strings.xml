@@ -27,6 +27,7 @@
         <item>Kung Pao Chicken</item>
         <item>Black Pepper Chicken</item>
         <item>Grilled Teriyaki Chicken</item>
+
         <item>Chinese Spare Ribs</item>
         <item>Broccoli Beef</item>
         <item>Shanghai Angus Steak</item>
@@ -46,20 +47,6 @@
         <item>Crispy Shrimp</item>
         <item>Fortune Cookies</item>
         <item>Chocolate Chunk Cookie</item>
-    </string-array>
-
-    <string-array name="fiamma_food_items" >
-        <item>Chicken</item>
-        <item>Sausage</item>
-        <item>Mushroom</item>
-        <item>Spinach</item>
-        <item>Tomato</item>
-        <item>Alfredo</item>
-        <item>Pesto</item>
-        <item>Sundried Tomato</item>
-        <item>Garlic Oil</item>
-        <item>Spicy Oil</item>
-        <item>Regular Oil</item>
     </string-array>
 
     <string-array name="coffee_bean_items">
@@ -106,6 +93,21 @@
         <item>cafe au lait</item>
         <item>cafe mocha</item>
         <item>cafe vanilla</item>
+    </string-array>
+
+    <string-array name="subway_food_items">
+        <item>Black Forest Ham</item>
+        <item>BLT</item>
+        <item>Meatball Marinara</item>
+        <item>Prime Rib and Cheese</item>
+        <item>Seafood Sensation</item>
+        <item>Spicy Italian</item>
+        <item>Steak and Cheese</item>
+        <item>Tuna</item>
+        <item>Veggie Delite</item>
+        <item>Egg and Cheese</item>
+        <item>Egg and Ham</item>
+        <item>Chicken Bacon Ranch</item>
     </string-array>
 
     <string name="title_activity_results">ResultsActivity</string>
