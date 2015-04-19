@@ -47,7 +47,8 @@ public class CustomGridAdapter extends BaseAdapter{
 
     @Override
     public Object getItem(int position) {
-
+        if(mfood_prices == null)
+            return 0;
         return new Double(mfood_prices[position]);
     }
 
@@ -65,13 +66,17 @@ public class CustomGridAdapter extends BaseAdapter{
 
         if (convertView == null) {
             grid = inflater.inflate(R.layout.grid_item, parent, false);
-
         }
+
         LinearLayout layout = (LinearLayout) grid.findViewById(R.id.grid_item_layout);
         TextView foodNameTextView = (TextView) grid.findViewById(R.id.food_item);
-        ImageView imageView = (ImageView)grid.findViewById(R.id.food_item_image);
+
+        if(mfood_pics != null) {
+            ImageView imageView = (ImageView) grid.findViewById(R.id.food_item_image);
+            imageView.setImageResource(mfood_pics[position]);
+        }
+
         foodNameTextView.setText(mfood_items[position]);
-        imageView.setImageResource(mfood_pics[position]);
 
         if(mPressed[position]){
             layout.setBackgroundColor(Color.parseColor("#FFFFFFFF"));
@@ -87,5 +92,9 @@ public class CustomGridAdapter extends BaseAdapter{
 
         return grid;
 
+    }
+
+    public String getStringItem(int position) {
+        return mfood_items[position];
     }
 }

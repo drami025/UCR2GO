@@ -4,16 +4,71 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.TextView;
 
+import com.ucr2go.return0.ucr2go.Model.CustomGridAdapter;
 import com.ucr2go.return0.ucr2go.R;
+
+import java.text.DecimalFormat;
 
 
 public class LaFiammaActivity extends ActionBarActivity {
+
+    private boolean[] fiamma_presses = {
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+    };
+
+    private CustomGridAdapter mAdapter;
+    private TextView mTotalPrice;
+    private GridView mGridView;
+    private boolean meat = false;
+    private boolean veggie[] = {false, false};
+    private boolean sauce = false;
+    private boolean oil = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_la_fiamma);
+
+        mTotalPrice = (TextView) findViewById(R.id.total_price_fiamma);
+        mAdapter = new CustomGridAdapter(this, R.array.fiamma_food_items, null,
+                null, fiamma_presses);
+
+        mGridView = (GridView) findViewById(R.id.fiamma_gridview);
+        mGridView.setAdapter(mAdapter);
+
+        mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v,
+                                    int position, long id) {
+
+                if (fiamma_presses[position]) {
+                    fiamma_presses[position] = false;
+                } else {
+
+                    fiamma_presses[position] = true;
+                }
+
+                DecimalFormat formatter = new DecimalFormat("#0.00");
+                mGridView.invalidateViews();
+            }
+        });
     }
 
 
