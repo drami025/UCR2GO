@@ -4,13 +4,15 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
 import com.ucr2go.return0.ucr2go.Model.CustomGridAdapter;
 import com.ucr2go.return0.ucr2go.R;
 
-
+import java.text.DecimalFormat;
 
 
 public class CoffeeBeanActivity extends ActionBarActivity {
@@ -58,7 +60,7 @@ public class CoffeeBeanActivity extends ActionBarActivity {
                 3.14,
                 1.01,
                 5.00,
-                88.89,
+                1.89,
                 2.13,
                 4.32,
                 2.21,
@@ -68,7 +70,7 @@ public class CoffeeBeanActivity extends ActionBarActivity {
                 3.14,
                 1.01,
                 5.00,
-                88.89,
+                1.89,
                 2.13,
                 4.32,
                 2.21,
@@ -78,14 +80,14 @@ public class CoffeeBeanActivity extends ActionBarActivity {
                 3.14,
                 1.31,
                 6.66,
-                88.89,
+                1.89,
                 2.13,
                 4.32,
                 2.21,
                 9.99,
                 10.00,
                 11.11,
-                12.13
+                1.00
         };
 
     private boolean[] coffee_presses = {
@@ -125,19 +127,40 @@ public class CoffeeBeanActivity extends ActionBarActivity {
 
     private CustomGridAdapter mAdapter;
     private TextView mTotalPrice;
+    private GridView mGridView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coffee_bean);
 
 
-        //mTotalPrice = (TextView) findViewById(R.id.)
+        mTotalPrice = (TextView) findViewById(R.id.total_price_coffee);
         mAdapter = new CustomGridAdapter(this, R.array.coffee_bean_items, mCoffeeBeanPics, coffee_price
         , coffee_presses);
 
-        GridView coffee_grid = (GridView) findViewById(R.id.coffee_bean_grid_view);
-        coffee_grid.setAdapter(mAdapter);
-        //coffee_grid.setAdapter(new CustomGridAdapter(this, R.array.coffee_bean_items, food_price);
+        mGridView = (GridView) findViewById(R.id.coffee_gridview);
+        mGridView.setAdapter(mAdapter);
+
+        mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v,
+                                    int position, long id) {
+                Double total_price = Double.valueOf(mTotalPrice.getText().toString().substring(1));
+                Double price = (Double) mAdapter.getItem(position);
+                if (coffee_presses[position]) {
+                    total_price -= price;
+                    coffee_presses[position] = false;
+                } else {
+                    total_price += price;
+                    coffee_presses[position] = true;
+                }
+
+                DecimalFormat formatter = new DecimalFormat("#0.00");
+                mTotalPrice.setText("$" + formatter.format(total_price));
+                mGridView.invalidateViews();
+            }
+        });
     }
 
     @Override
