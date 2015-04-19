@@ -24,7 +24,6 @@ public class CustomGridAdapter extends BaseAdapter{
         mfood_items = c.getResources().getStringArray(string_array_id);
         mfood_pics = drawable_id_array;
         mContext = c;
-        Log.e("HERE", "GOT TO THIS POINT before");
     }
 
     @Override
@@ -45,13 +44,11 @@ public class CustomGridAdapter extends BaseAdapter{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        Log.e("HERE", "GOT TO THIS POINT");
         View grid = convertView;
         LayoutInflater inflater = (LayoutInflater) mContext
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if (convertView == null) {
-            grid = new View(mContext);
             grid = inflater.inflate(R.layout.grid_item, parent, false);
 
         }
