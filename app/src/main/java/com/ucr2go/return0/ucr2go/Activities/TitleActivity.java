@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.ucr2go.return0.ucr2go.Model.RestaurantListAdapter;
 import com.ucr2go.return0.ucr2go.R;
 
 
@@ -24,8 +25,7 @@ public class TitleActivity extends ActionBarActivity {
         ListView listView = (ListView) findViewById(R.id.restaurant_list);
         String[] restaurants = getResources().getStringArray(R.array.restaurants);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,
-                android.R.id.text1, restaurants);
+        RestaurantListAdapter adapter = new RestaurantListAdapter(this, restaurants);
 
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new ListView.OnItemClickListener(){

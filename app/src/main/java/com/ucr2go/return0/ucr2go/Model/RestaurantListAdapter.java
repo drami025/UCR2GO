@@ -16,6 +16,14 @@ import com.ucr2go.return0.ucr2go.R;
 public class RestaurantListAdapter extends ArrayAdapter<String> {
     private Context mContext;
     private String[] mRestaurant;
+    private int[] mRestaurantIconIds = {
+            R.drawable.coffee_bean_logo,
+            R.drawable.habaneros_logo,
+            R.drawable.la_fiamma_logo,
+            R.drawable.latitude_55_logo,
+            R.drawable.panda_express_logo,
+            R.drawable.subway_logo
+    };
 
     public RestaurantListAdapter(Context context, String[] restaurants){
         super(context, R.layout.restaurant_list_item, restaurants);
@@ -37,21 +45,7 @@ public class RestaurantListAdapter extends ArrayAdapter<String> {
         ImageView imageView = (ImageView) rowView.findViewById(R.id.restaurant_logo);
 
         textView.setText(mRestaurant[position]);
-
-        switch(position){
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-        }
+        imageView.setImageResource(mRestaurantIconIds[position]);
 
         return rowView;
     }
