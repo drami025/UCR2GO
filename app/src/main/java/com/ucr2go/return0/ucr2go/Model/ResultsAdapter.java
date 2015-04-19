@@ -28,6 +28,7 @@ public class ResultsAdapter extends ArrayAdapter {
     private String[] mNames;
     private Context mContext;
     private Double mTotal = 0.00;
+    private int[] mAmounts;
 
     public ResultsAdapter(Context context, HashMap<Integer, Node> hashMap, String[] names, int size) {
         super(context, R.layout.selection_list_item, names);
@@ -35,6 +36,7 @@ public class ResultsAdapter extends ArrayAdapter {
         mDrawableIds = new Integer[size];
         mPrices = new Double[size];
         mContext = context;
+        mAmounts = new int[size];
 
         int i = 0;
         for(int j = 0; j < 40; j++){
@@ -72,9 +74,7 @@ public class ResultsAdapter extends ArrayAdapter {
         else{
             priceText.setText(mPrices[position] + "");
             final int amountMore = Integer.valueOf(addMoreText.getText().toString());
-            mTotal += Double.valueOf(priceText.getText().toString()) * amountMore;
-            TextView totalText = (TextView) ((Activity) mContext).findViewById(R.id.total_results_price);
-            totalText.setText(mTotal + "");
+            mAmounts[position] = amountMore;
 
             addMoreText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                 @Override
@@ -82,8 +82,8 @@ public class ResultsAdapter extends ArrayAdapter {
                     if (!hasFocus) {
                         DecimalFormat formatter = new DecimalFormat("#0.00");
                         double item_price = Double.valueOf(priceText.getText().toString());
-                        priceText.setText("$" + formatter.format(item_price * amountMore) + "");
-                        //ResultsAdapter.this.notifyDataSetChanged();
+                        priceText.setText(formatter.format(item_price * amountMore) + "");
+                        ResultsAdapter.this.notifyDataSetChanged();
                     }
                 }
             });
@@ -105,4 +105,11 @@ public class ResultsAdapter extends ArrayAdapter {
         return mTotal;
     }
 
+    public int[] getAmounts(){
+        return mAmounts;
+    }
+
+    public Double[] getPrices(){
+        return mPrices;
+    }
 }

@@ -19,6 +19,7 @@ import com.ucr2go.return0.ucr2go.Model.ResultsAdapter;
 import com.ucr2go.return0.ucr2go.R;
 
 import java.lang.reflect.Type;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -62,6 +63,12 @@ public class ResultsActivity extends ActionBarActivity {
         resultList.setItemsCanFocus(true);
         resultList.setAdapter(mAdapter);
 
+        TextView totalText = (TextView) findViewById(R.id.total_results_price);
+
+        Double total = sumTotal();
+        DecimalFormat formatter = new DecimalFormat("#0.00");
+        totalText.setText(formatter.format(total));
+
         Button submit = (Button) findViewById(R.id.submit_results_button);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +79,17 @@ public class ResultsActivity extends ActionBarActivity {
             }
         });
 
+    }
+
+    private Double sumTotal() {
+        int[] amounts = mAdapter.getAmounts();
+        Double[] prices = mAdapter.getPrices();
+        Double sum = 0.00;
+        for(int i = 0; i < amounts.length; i++){
+            sum += (prices[i] * amounts[i]);
+        }
+
+        return sum;
     }
 
     @Override
