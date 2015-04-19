@@ -86,8 +86,8 @@ public class CoffeeBeanActivity extends ActionBarActivity {
                 2.21,
                 9.99,
                 10.00,
-                11.11,
-                12.13
+                11.11
+
         };
 
     private boolean[] coffee_presses = {
@@ -121,8 +121,8 @@ public class CoffeeBeanActivity extends ActionBarActivity {
             false,
             false,
             false,
-            false,
             false
+
     };
 
     private CustomGridAdapter mAdapter;
