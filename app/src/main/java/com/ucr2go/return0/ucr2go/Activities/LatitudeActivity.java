@@ -10,9 +10,11 @@ import android.widget.GridView;
 import android.widget.TextView;
 
 import com.ucr2go.return0.ucr2go.Model.CustomGridAdapter;
+import com.ucr2go.return0.ucr2go.Model.Node;
 import com.ucr2go.return0.ucr2go.R;
 
 import java.text.DecimalFormat;
+import java.util.LinkedList;
 
 
 public class LatitudeActivity extends ActionBarActivity {
@@ -52,6 +54,8 @@ public class LatitudeActivity extends ActionBarActivity {
     private TextView mTotalPrice;
     private GridView mGridView;
 
+    private LinkedList<Node> checkout_list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,12 +73,23 @@ public class LatitudeActivity extends ActionBarActivity {
                                     int position, long id) {
                 Double total_price = Double.valueOf(mTotalPrice.getText().toString().substring(1));
                 Double price = (Double) mAdapter.getItem(position);
+
+                // Create Node to put onto checkout list
+                Node node(mAdapter.getStringItem(position),latitude_food_prices[position],latitude_food[position]);
+
                 if (latitude_presses[position]) {
                     total_price -= price;
                     latitude_presses[position] = false;
+
+                    // Remove an item from the checkout List
+                    checkout_list.remove(node);
+
                 } else {
                     total_price += price;
                     latitude_presses[position] = true;
+
+                    // Add an item from the checkout List
+                    checkout_list.add(node);
                 }
 
                 DecimalFormat formatter = new DecimalFormat("#0.00");
