@@ -5,30 +5,34 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.EditText;
 
 import com.ucr2go.return0.ucr2go.R;
 
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 
-
-public class InformationActivity extends ActionBarActivity {
-
-    private EditText mName;
-    private EditText mCredit;
-    private EditText mLocation;
-
-
+public class SplashScreenActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_information);
+        setContentView(R.layout.activity_splash_screen);
 
-        Intent intent = getIntent();
-      //  String message = intent.getStringExtra(InformationActivity.EXTRA_MESSAGE);
+        Thread splash_screen = new Thread(){
+            public void run (){
+                try{
+                    sleep(200);
+                }catch(Exception e){
+                    e.printStackTrace();
+                }finally{
+                    Intent intent = new Intent(SplashScreenActivity.this, TitleActivity.class);
+                    startActivity(intent);
 
+                }
+            }
+
+        };
 
     }
 
@@ -36,7 +40,7 @@ public class InformationActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_information, menu);
+        getMenuInflater().inflate(R.menu.menu_splash_screen, menu);
         return true;
     }
 
