@@ -59,12 +59,9 @@ public class ResultsAdapter extends ArrayAdapter {
         }
 
         TextView nameText = (TextView) rowView.findViewById(R.id.result_name);
-        TextView priceText = (TextView) rowView.findViewById(R.id.result_price);
+        final TextView priceText = (TextView) rowView.findViewById(R.id.result_price);
         ImageView image = (ImageView) rowView.findViewById(R.id.result_image);
-        EditText addMoreText = (EditText) rowView.findViewById(R.id.result_add_more);
-
-
-        int amountMore = 1; // Integer.getInteger(addMoreText.getText().toString());
+        final EditText addMoreText = (EditText) rowView.findViewById(R.id.result_add_more);
 
         if(mPrices[position] == 0){
             priceText.setVisibility(View.INVISIBLE);
@@ -72,8 +69,22 @@ public class ResultsAdapter extends ArrayAdapter {
         }
         else{
             priceText.setText(mPrices[position] + "");
-            double item_price = Double.valueOf(priceText.getText().toString());
-            priceText.setText(item_price * amountMore + "");
+
+            addMoreText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    int amountMore = 1;
+                    if (addMoreText != null) {
+                        Log.e("HERE", "COOL " + addMoreText.getText());
+                        amountMore = Integer.valueOf(addMoreText.getText().toString());
+                    }
+
+                    if (!hasFocus) {
+                        double item_price = Double.valueOf(priceText.getText().toString());
+                        priceText.setText(item_price * amountMore + "");
+                    }
+                }
+            });
         }
 
         if(mDrawableIds[position] == 0){
