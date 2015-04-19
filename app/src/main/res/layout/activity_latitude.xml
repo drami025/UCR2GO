@@ -23,7 +23,7 @@
         android:horizontalSpacing="5dp"
         android:stretchMode="columnWidth"
         android:gravity="center"
-        android:layout_above="@id/latitude_id"
+        android:layout_above="@+id/latitude_id"
         />
 
     <Button
