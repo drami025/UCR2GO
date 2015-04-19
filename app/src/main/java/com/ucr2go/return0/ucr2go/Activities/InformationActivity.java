@@ -26,10 +26,6 @@ public class InformationActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information);
 
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(InformationActivity.EXTRA_MESSAGE);
-
-
     }
 
 
