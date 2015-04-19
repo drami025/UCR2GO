@@ -51,7 +51,7 @@ public class PandaActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panda);
 
-        GridView gridview = (GridView) findViewById(R.id.gridview);
+        GridView gridview = (GridView) findViewById(R.id.panda_gridview);
         gridview.setAdapter(new CustomGridAdapter(this, R.array.panda_food_items, panda_food));
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {

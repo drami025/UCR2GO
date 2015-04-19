@@ -7,7 +7,7 @@
     tools:context="com.ucr2go.return0.ucr2go.Activities.PandaActivity">
 
     <GridView
-        android:id="@+id/gridview"
+        android:id="@+id/panda_gridview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:columnWidth="90dp"
