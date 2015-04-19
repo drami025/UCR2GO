@@ -17,13 +17,15 @@
     </string-array>
 
     <string-array name="panda_food_items" >
-        <item>Orange Chicken</item>
+
+        <!--<item>Orange Chicken</item>
         <item>Sweetfire Chicken Breast</item>
         <item>String Bean Chicken Breast</item>
         <item>Kung Pao Chicken</item>
         <item>Mushroom Chicken</item>
         <item>Black Pepper Chicken</item>
-        <item>Grilled Teriyaki Chicken</item>
+        <item>Grilled Teriyaki Chicken</item>-->
+
         <item>Chinese Spare Ribs</item>
         <item>Broccoli Beef</item>
         <item>Shanghai Angus Steak</item>
