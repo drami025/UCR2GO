@@ -6,6 +6,13 @@ package com.ucr2go.return0.ucr2go.Model;
 public class Node {
     private int mDrawableId;
     private double mPrice;
+    private String mName;
+
+    public Node(String name, double price, int drawableId){
+        mName = name;
+        mPrice = price;
+        mDrawableId = drawableId;
+    }
 
     public String getName() {
         return mName;
@@ -30,8 +37,6 @@ public class Node {
     public void setDrawableId(int drawableId) {
         mDrawableId = drawableId;
     }
-
-    private String mName;
 
 
 }
