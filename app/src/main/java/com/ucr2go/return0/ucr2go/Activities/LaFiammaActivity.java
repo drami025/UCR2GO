@@ -58,7 +58,7 @@ public class LaFiammaActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 String json = HashMapStringConverter.hashMapToString(mFiammaOrder);
-                Intent intent = new Intent(PandaActivity.this, ResultsActivity.class);
+                Intent intent = new Intent(LaFiammaActivity.this, ResultsActivity.class);
                 intent.putExtra("hashmap", json);
                 startActivity(intent);
             }
