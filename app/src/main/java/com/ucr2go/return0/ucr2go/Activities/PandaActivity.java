@@ -16,7 +16,7 @@ import com.ucr2go.return0.ucr2go.R;
 public class PandaActivity extends ActionBarActivity {
 
     private int[] panda_food = {
-            R.drawable.panda_expressRibs,
+            R.drawable.panda_expressribs,
             R.drawable.panda_express_broccolibeef,
             R.drawable.panda_express_shainghaiangussteak,
             R.drawable.panda_express_beijingbeef,

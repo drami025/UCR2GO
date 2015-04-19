@@ -6,6 +6,9 @@
     <string name="title_activity_coffee_bean">Coffee Bean Menu</string>
     <string name="title_activity_habanero">Habanero Menu</string>
     <string name="title_activity_la_fiamma">La Fiamma Menu</string>
+    <string name="title_activity_panda_express">Panda Express Menu</string>
+    <string name="title_activity_latitude">Latitude 55 Menu</string>
+    <string name="title_activity_subway">Subway Menu</string>
 
     <string-array name="restaurants">
         <item>Coffee Bean</item>
