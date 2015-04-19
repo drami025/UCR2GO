@@ -1,24 +1,26 @@
-package com.ucr2go.return0.ucr2go;
+package com.ucr2go.return0.ucr2go.Activities;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.ucr2go.return0.ucr2go.R;
 
-public class LatitudeActivity extends ActionBarActivity {
+
+public class CoffeeBeanActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_latitude);
+        setContentView(R.layout.activity_coffee_bean);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_latitude, menu);
+        getMenuInflater().inflate(R.menu.menu_coffee_bean, menu);
         return true;
     }
 

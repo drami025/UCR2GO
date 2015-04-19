@@ -1,9 +1,11 @@
-package com.ucr2go.return0.ucr2go;
+package com.ucr2go.return0.ucr2go.Activities;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.ucr2go.return0.ucr2go.R;
 
 
 public class HabaneroActivity extends ActionBarActivity {

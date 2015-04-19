@@ -1,29 +1,26 @@
-package com.ucr2go.return0.ucr2go;
+package com.ucr2go.return0.ucr2go.Activities;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+
+import com.ucr2go.return0.ucr2go.R;
 
 
-public class ResultsActivity extends ActionBarActivity {
+public class SubwayActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_results);
-        TextView resultText = (TextView) findViewById(R.id.result_text);
-        Intent intent = getIntent();
-        String result_message = intent.getStringExtra("message");
-        resultText.setText(result_message);
+        setContentView(R.layout.activity_subway);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_results, menu);
+        getMenuInflater().inflate(R.menu.menu_subway, menu);
         return true;
     }
 

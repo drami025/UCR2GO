@@ -1,4 +1,4 @@
-package com.ucr2go.return0.ucr2go;
+package com.ucr2go.return0.ucr2go.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -6,15 +6,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.List;
+import com.ucr2go.return0.ucr2go.R;
 
 
 public class TitleActivity extends ActionBarActivity {

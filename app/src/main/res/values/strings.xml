@@ -13,4 +13,5 @@
         <item>Subway</item>
     </string-array>
     <string name="title_activity_results">ResultsActivity</string>
+    <string name="filler">filler</string>
 </resources>

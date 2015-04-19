@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".TitleActivity"
+            android:name=".Activities.TitleActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,36 +17,36 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ResultsActivity"
+            android:name=".Activities.ResultsActivity"
             android:label="@string/title_activity_results"
-            android:parentActivityName=".TitleActivity" >
+            android:parentActivityName=".Activities.TitleActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ucr2go.return0.ucr2go.TitleActivity" />
+                android:value=".Activities.TitleActivity" />
         </activity>
         <activity
-            android:name=".CoffeeBeanActivity"
+            android:name=".Activities.CoffeeBeanActivity"
             android:label="@string/title_activity_coffee_bean"
-            android:parentActivityName=".TitleActivity" >
+            android:parentActivityName=".Activities.TitleActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ucr2go.return0.ucr2go.TitleActivity" />
+                android:value=".Activities.TitleActivity" />
         </activity>
         <activity
-            android:name=".HabaneroActivity"
+            android:name=".Activities.HabaneroActivity"
             android:label="@string/title_activity_habanero"
-            android:parentActivityName=".TitleActivity" >
+            android:parentActivityName=".Activities.TitleActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ucr2go.return0.ucr2go.TitleActivity" />
+                android:value=".Activities.TitleActivity" />
         </activity>
         <activity
-            android:name=".LaFiammaActivity"
+            android:name=".Activities.LaFiammaActivity"
             android:label="@string/title_activity_la_fiamma"
-            android:parentActivityName=".TitleActivity" >
+            android:parentActivityName=".Activities.TitleActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ucr2go.return0.ucr2go.TitleActivity" />
+                android:value=".Activities.TitleActivity" />
         </activity>
     </application>
 
